@@ -11,7 +11,6 @@ function colorSelection(){
     return colorChoice;
 }
 
-// Select color input
 // Select size input
 var sizePicker = getElementByld('sizePicker');
 
@@ -41,7 +40,7 @@ function makeGrid() {
         var row = table.insertCell(0);
     }
 
-    // table.innerHTML= ? 
+    // table.innerHTML= ? not sure how to reset the html table to append the new table to it
     document.body.appendChild(table); 
 
 } 

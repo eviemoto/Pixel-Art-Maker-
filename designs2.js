@@ -11,28 +11,44 @@ function colorSelection(){
     return colorChoice;
 }
 
-//Select size input
+// Select color input
+// Select size input
+var sizePicker = getElementByld('sizePicker');
 
-const submit = document.querySelector("[type='submit']");
-submit.addEventListener("click", makeGrid());
- 
+sizePicker.addEventListener("submit",funtion (event)) 
+    console.log("Size Picker is running");
+    event.preventDefault();
+    makeGrid();
+
+    
 // When size is submitted by the user, call makeGrid()
 
-function makeGrid(event) {
+function makeGrid() {
+        console.log("makeGrid is running");
+// define size variables 
+    const width = document.getElementById("inputHeight").value;
+    const height = document.getElementById("inputWidth").value;
 
-    canvas.removeChildren();
+    const table = document.createElement("TABLE");
 
-    const height = document.getElementsById("inputHeight").value;
-    const width = document.getElementsById("inputWidth").value;
-    event.preventDefault();
+    var pixelCanvasGrid = document.getElementById("pixelCanvas");
 
-for (let rows = 0; rows < height; rows++ ) {
-    let createRow = document.querySelectorn("#pixelCanvas").insertRow(); 
+    for (let r=0; r < width; r++){
+        var row = table.insertRow(0);
     }
-    for (let columns = 0; columns < width; columns++){
-        createRow.insertCell();
-    }
-}
 
-document.getElementById('pixelCanvas').
-$("#submit").on("click", makeGrid);
+    for (let c=0; c < width; c++){
+        var row = table.insertCell(0);
+    }
+
+    // table.innerHTML= ? 
+    document.body.appendChild(table); 
+
+} 
+
+  // 1. We get the reference where we should place the table
+  // 2. We get the sizes of our inputs
+  // 3. We create a new empty table on the reference we get on step 1
+  // 4. We do a loop to create a new <tr> (row) for each number on our height input
+  // 5. We do a loop, inside the loop of step 4, to create a new column <td> for each number on the input width
+  // 6. Reset html table(.innerhtml='' and append new table to it)
